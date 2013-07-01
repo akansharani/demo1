@@ -6,8 +6,8 @@ class PetController {
 
 	def add() {
 		if (request.method == 'GET') {
-			return [pet: new Pet(owner: Owner.get(params.owner?.id)), types: PetType.list()]
-		}
+			return [pet: new Pet(owner: Owner.get(params.owner?.id)), types: PetType.list()]}
+		
 
 		def pet = petclinicService.createPet(params.pet?.name, params.pet?.birthDate,
 			(params.pet?.type?.id ?: 0) as Long, (params.pet?.owner?.id ?: 0) as Long)
